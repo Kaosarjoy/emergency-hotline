@@ -5,337 +5,403 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emergency-Hotline</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        body {
+            background-color: #f3f4f6;
+        }
+    </style>
 </head>
 <body>
-    <!--Navbar -->
-  <div class="flex justify-between items-center gap-2 mt-2 mx-auto">
-    <div class="flex gap-2">
-        <img src="asserts/logo.png" alt="Logo" class="w-[50px] h-[50px] ">
-        <h1 class="text-green-600">
-            Emergency <br>
-            Service
-        </h1>
+    <div class="flex justify-between items-center px-4 py-2 bg-white shadow-md rounded-b-2xl">
+        <div class="flex items-center gap-2">
+            <img src="asserts/logo.png" alt="Logo" class="w-12 h-12">
+            <h1 class="text-green-600 font-bold text-lg leading-tight">
+                Emergency <br> Service
+            </h1>
+        </div>
+
+        <div class="flex gap-2 items-center">
+            <div class="flex items-center gap-1 bg-gray-100 px-3 py-1 rounded-full">
+                <img src="asserts/heart.png" alt="Heart" class="w-4 h-4">
+                <span id="love-count" class="text-sm font-semibold text-gray-700">0</span>
+            </div>
+
+            <div class="flex items-center gap-1 bg-gray-100 px-3 py-1 rounded-full">
+                <img src="asserts/coin.png" alt="Coin" class="w-4 h-4">
+                <span id="coin-count" class="text-sm font-semibold text-gray-700">100</span>
+            </div>
+
+            <button id="main-copy-btn" class="text-white bg-gradient-to-r from-green-400 to-green-600 hover:bg-gradient-to-br font-medium rounded-full text-sm px-4 py-2 shadow-lg">
+                <span id="copy-count">0</span> Copy
+            </button>
+        </div>
     </div>
 
-    <!-- Buttons section -->
-    <div>
-        <button class="btn btn-dash bg-white">
-            <img src="asserts/heart.png" alt="Heart" class="w-[16px] h-[16px]">
-            0
-        </button>
+    <div class="flex flex-col items-center py-8 px-4 bg-gradient-to-r from-green-900 via-green-600 to-green-900 text-center shadow-lg mt-4 rounded-2xl mx-4">
+        <img src="asserts/logo-dark.png" alt="Logo" class="w-24">
+        <h1 class="text-white text-2xl font-bold mt-2">Emergency Service Directory</h1>
+        <p class="text-white text-sm mt-1 max-w-lg">Government Emergency Services at Your Fingertip – A Project by the Government of the People’s Republic of Bangladesh</p>
+    </div>
 
-        <!-- Coin button -->
-        <button class="btn btn-dash bg-white">
-            <img src="asserts/coin.png" alt="Coin" class="w-[16px] h-[16px]">
-            100
-        </button>
+    <div class="flex flex-col lg:flex-row gap-6 p-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 flex-1">
+            <div class="bg-white shadow-xl rounded-2xl p-6 hover:bg-gray-100 transition-colors duration-200 cursor-pointer card-item">
+                <div class="flex justify-between items-center mb-4">
+                    <img src="asserts/alarm.png" alt="Alarm" class="w-8 h-8">
+                    <button class="love-btn btn btn-circle btn-sm bg-red-500 hover:bg-red-600 text-white p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                        </svg>
+                    </button>
+                </div>
+                <h1 class="text-xl font-bold text-gray-800 mb-1">National Emergency Number</h1>
+                <p class="text-gray-500 mb-4">National Emergency</p>
+                <h2 class="text-4xl font-extrabold text-black mb-4">999</h2>
+                <div class="mb-4">
+                    <button class="btn btn-outline btn-info text-black w-24">All</button>
+                </div>
+                <div class="flex justify-center gap-3">
+                    <button class="copy-btn btn btn-outline flex items-center gap-2 w-1/2">
+                        <img src="asserts/copy.png" alt="Copy" class="w-5 h-5">
+                        Copy
+                    </button>
+                    <button class="call-btn btn btn-success flex items-center gap-2 w-1/2">
+                        <img src="asserts/phone-call.png" alt="Call" class="w-5 h-5">
+                        Call
+                    </button>
+                </div>
+            </div>
 
-        <!-- Copy button -->
-        <button type="button" class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 
-            hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 
-            font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 rounded-full">
-            <span>0</span> Copy
-        </button>
-    </div>
-</div>
+            <div class="bg-white shadow-xl rounded-2xl p-6 hover:bg-gray-100 transition-colors duration-200 cursor-pointer card-item">
+                <div class="flex justify-between items-center mb-4">
+                    <img src="asserts/police.png" alt="Police" class="w-8 h-8">
+                    <button class="love-btn btn btn-circle btn-sm bg-red-500 hover:bg-red-600 text-white p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                        </svg>
+                    </button>
+                </div>
+                <h1 class="text-xl font-bold text-gray-800 mb-1">Police Helpline Number</h1>
+                <p class="text-gray-500 mb-4">Police</p>
+                <h2 class="text-4xl font-extrabold text-black mb-4">999</h2>
+                <div class="mb-4">
+                    <button class="btn btn-outline btn-info text-black w-24">Police</button>
+                </div>
+                <div class="flex justify-center gap-3">
+                    <button class="copy-btn btn btn-outline flex items-center gap-2 w-1/2">
+                        <img src="asserts/copy.png" alt="Copy" class="w-5 h-5">
+                        Copy
+                    </button>
+                    <button class="call-btn btn btn-success flex items-center gap-2 w-1/2">
+                        <img src="asserts/phone-call.png" alt="Call" class="w-5 h-5">
+                        Call
+                    </button>
+                </div>
+            </div>
 
- <!--Banner Section -->
-<div class="flex flex-col items-center  p-5  bg-gradient-to-r from-green-900 via-green-600 to-green-900">
-    <img src="asserts/logo-dark.png" alt="" class="w-[100px]">
-    <h1 class="text-white mt-2">Emergency Service Directory</h1>
-    <p class="text-white mb-4" >Government Emergency Services at Your Fingertip – A Project by  Government of the People’s Republic of Bangladesh</p>
-</div>
+            <div class="bg-white shadow-xl rounded-2xl p-6 hover:bg-gray-100 transition-colors duration-200 cursor-pointer card-item">
+                <div class="flex justify-between items-center mb-4">
+                    <img src="asserts/fire-service.png" alt="Fire Service" class="w-8 h-8">
+                    <button class="love-btn btn btn-circle btn-sm bg-red-500 hover:bg-red-600 text-white p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                        </svg>
+                    </button>
+                </div>
+                <h1 class="text-xl font-bold text-gray-800 mb-1">Fire Service Number</h1>
+                <p class="text-gray-500 mb-4">Fire Service</p>
+                <h2 class="text-4xl font-extrabold text-black mb-4">999</h2>
+                <div class="mb-4">
+                    <button class="btn btn-outline btn-info text-black w-24">Fire</button>
+                </div>
+                <div class="flex justify-center gap-3">
+                    <button class="copy-btn btn btn-outline flex items-center gap-2 w-1/2">
+                        <img src="asserts/copy.png" alt="Copy" class="w-5 h-5">
+                        Copy
+                    </button>
+                    <button class="call-btn btn btn-success flex items-center gap-2 w-1/2">
+                        <img src="asserts/phone-call.png" alt="Call" class="w-5 h-5">
+                        Call
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-xl rounded-2xl p-6 hover:bg-gray-100 transition-colors duration-200 cursor-pointer card-item">
+                <div class="flex justify-between items-center mb-4">
+                    <img src="asserts/ambulance.png" alt="Ambulance" class="w-8 h-8">
+                    <button class="love-btn btn btn-circle btn-sm bg-red-500 hover:bg-red-600 text-white p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                        </svg>
+                    </button>
+                </div>
+                <h1 class="text-xl font-bold text-gray-800 mb-1">Ambulance Service</h1>
+                <p class="text-gray-500 mb-4">Ambulance</p>
+                <h2 class="text-4xl font-extrabold text-black mb-4">1994-999999</h2>
+                <div class="mb-4">
+                    <button class="btn btn-outline btn-info text-black w-24">Health</button>
+                </div>
+                <div class="flex justify-center gap-3">
+                    <button class="copy-btn btn btn-outline flex items-center gap-2 w-1/2">
+                        <img src="asserts/copy.png" alt="Copy" class="w-5 h-5">
+                        Copy
+                    </button>
+                    <button class="call-btn btn btn-success flex items-center gap-2 w-1/2">
+                        <img src="asserts/phone-call.png" alt="Call" class="w-5 h-5">
+                        Call
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-xl rounded-2xl p-6 hover:bg-gray-100 transition-colors duration-200 cursor-pointer card-item">
+                <div class="flex justify-between items-center mb-4">
+                    <img src="asserts/helping-hand.png" alt="Helpline" class="w-8 h-8">
+                    <button class="love-btn btn btn-circle btn-sm bg-red-500 hover:bg-red-600 text-white p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                        </svg>
+                    </button>
+                </div>
+                <h1 class="text-xl font-bold text-gray-800 mb-1">Women & Child Helpline</h1>
+                <p class="text-gray-500 mb-4">Women & Child Helpline</p>
+                <h2 class="text-4xl font-extrabold text-black mb-4">109</h2>
+                <div class="mb-4">
+                    <button class="btn btn-outline btn-info text-black w-24">Help</button>
+                </div>
+                <div class="flex justify-center gap-3">
+                    <button class="copy-btn btn btn-outline flex items-center gap-2 w-1/2">
+                        <img src="asserts/copy.png" alt="Copy" class="w-5 h-5">
+                        Copy
+                    </button>
+                    <button class="call-btn btn btn-success flex items-center gap-2 w-1/2">
+                        <img src="asserts/phone-call.png" alt="Call" class="w-5 h-5">
+                        Call
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-xl rounded-2xl p-6 hover:bg-gray-100 transition-colors duration-200 cursor-pointer card-item">
+                <div class="flex justify-between items-center mb-4">
+                    <img src="asserts/stop-corruption.png" alt="Stop-Corruption" class="w-8 h-8">
+                    <button class="love-btn btn btn-circle btn-sm bg-red-500 hover:bg-red-600 text-white p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                        </svg>
+                    </button>
+                </div>
+                <h1 class="text-xl font-bold text-gray-800 mb-1">Anti-Corruption Helpline</h1>
+                <p class="text-gray-500 mb-4">Anti-Corruption</p>
+                <h2 class="text-4xl font-extrabold text-black mb-4">106</h2>
+                <div class="mb-4">
+                    <button class="btn btn-outline btn-info text-black w-24">Govt.</button>
+                </div>
+                <div class="flex justify-center gap-3">
+                    <button class="copy-btn btn btn-outline flex items-center gap-2 w-1/2">
+                        <img src="asserts/copy.png" alt="Copy" class="w-5 h-5">
+                        Copy
+                    </button>
+                    <button class="call-btn btn btn-success flex items-center gap-2 w-1/2">
+                        <img src="asserts/phone-call.png" alt="Call" class="w-5 h-5">
+                        Call
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-xl rounded-2xl p-6 hover:bg-gray-100 transition-colors duration-200 cursor-pointer card-item">
+                <div class="flex justify-between items-center mb-4">
+                    <img src="asserts/electric-tower.png" alt="Electricity Helpline" class="w-8 h-8">
+                    <button class="love-btn btn btn-circle btn-sm bg-red-500 hover:bg-red-600 text-white p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                        </svg>
+                    </button>
+                </div>
+                <h1 class="text-xl font-bold text-gray-800 mb-1">Electricity Helpline</h1>
+                <p class="text-gray-500 mb-4">Electricity Helpline</p>
+                <h2 class="text-4xl font-extrabold text-black mb-4">16216</h2>
+                <div class="mb-4">
+                    <button class="btn btn-outline btn-info text-black w-24">Electricity</button>
+                </div>
+                <div class="flex justify-center gap-3">
+                    <button class="copy-btn btn btn-outline flex items-center gap-2 w-1/2">
+                        <img src="asserts/copy.png" alt="Copy" class="w-5 h-5">
+                        Copy
+                    </button>
+                    <button class="call-btn btn btn-success flex items-center gap-2 w-1/2">
+                        <img src="asserts/phone-call.png" alt="Call" class="w-5 h-5">
+                        Call
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-xl rounded-2xl p-6 hover:bg-gray-100 transition-colors duration-200 cursor-pointer card-item">
+                <div class="flex justify-between items-center mb-4">
+                    <img src="asserts/brac.png" alt="Brac Helpline" class="w-8 h-8">
+                    <button class="love-btn btn btn-circle btn-sm bg-red-500 hover:bg-red-600 text-white p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                        </svg>
+                    </button>
+                </div>
+                <h1 class="text-xl font-bold text-gray-800 mb-1">Brac Helpline</h1>
+                <p class="text-gray-500 mb-4">Brac Helpline</p>
+                <h2 class="text-4xl font-extrabold text-black mb-4">16445</h2>
+                <div class="mb-4">
+                    <button class="btn btn-outline btn-info text-black w-24">NGO</button>
+                </div>
+                <div class="flex justify-center gap-3">
+                    <button class="copy-btn btn btn-outline flex items-center gap-2 w-1/2">
+                        <img src="asserts/copy.png" alt="Copy" class="w-5 h-5">
+                        Copy
+                    </button>
+                    <button class="call-btn btn btn-success flex items-center gap-2 w-1/2">
+                        <img src="asserts/phone-call.png" alt="Call" class="w-5 h-5">
+                        Call
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-xl rounded-2xl p-6 hover:bg-gray-100 transition-colors duration-200 cursor-pointer card-item">
+                <div class="flex justify-between items-center mb-4">
+                    <img src="asserts/Bangladesh-Railway.png" alt="Bangladesh-Railway" class="w-8 h-8">
+                    <button class="love-btn btn btn-circle btn-sm bg-red-500 hover:bg-red-600 text-white p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                        </svg>
+                    </button>
+                </div>
+                <h1 class="text-xl font-bold text-gray-800 mb-1">Bangladesh Railway Helpline</h1>
+                <p class="text-gray-500 mb-4">Bangladesh Railway</p>
+                <h2 class="text-4xl font-extrabold text-black mb-4">16445</h2>
+                <div class="mb-4">
+                    <button class="btn btn-outline btn-info text-black w-24">Travel</button>
+                </div>
+                <div class="flex justify-center gap-3">
+                    <button class="copy-btn btn btn-outline flex items-center gap-2 w-1/2">
+                        <img src="asserts/copy.png" alt="Copy" class="w-5 h-5">
+                        Copy
+                    </button>
+                    <button class="call-btn btn btn-success flex items-center gap-2 w-1/2">
+                        <img src="asserts/phone-call.png" alt="Call" class="w-5 h-5">
+                        Call
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full lg:w-1/3 bg-white p-6 rounded-2xl shadow-xl flex flex-col h-fit">
+            <div class="flex justify-between items-center mb-4">
+                <div class="flex items-center gap-2">
+                    <img src="asserts/clock.png" alt="Clock" class="w-8 h-8">
+                    <h1 class="text-2xl font-bold text-gray-800">Call History</h1>
+                </div>
+                <div>
+                    <button id="clear-btn" type="button" class="text-white bg-gradient-to-r from-green-400 to-green-600 hover:bg-gradient-to-br font-medium rounded-lg text-sm px-4 py-2 text-center shadow-md">Clear</button>
+                </div>
+            </div>
+            <ul id="call-history" class="bg-gray-50 rounded-lg p-3 space-y-2 overflow-y-auto max-h-[500px]">
+                </ul>
+        </div>
+    </div>
 
 
-<!--Card Section -->
-<div class="">
-    <!--Left Card Section -->
-<div>
-        <!-- Alarm Card -->
- <div class="max-w-sm mx-auto bg-white shadow-xl rounded-2xl p-5 mt-5">
-    <div class="flex justify-between items-center mb-4">
-        <img src="asserts/alarm.png" alt="Alarm" class="w-6 h-6">
-        <button id="love" class="btn btn-circle btn-sm bg-red-500 hover:bg-red-600 text-white p-2">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-            </svg>
-        </button>
-    </div>
-    <h1 class="text-lg font-bold text-gray-800 mb-1 ">National Emergency Number</h1>
-    <p class="text-gray-500 mb-4 ">National Emergency</p>
-    <h2 class="text-3xl font-extrabold text-black mb-4">999</h2>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const callButtons = document.querySelectorAll('.call-btn');
+            const copyButtons = document.querySelectorAll('.copy-btn');
+            const loveButtons = document.querySelectorAll('.love-btn');
+            const clearButton = document.getElementById('clear-btn');
+            const callHistoryList = document.getElementById('call-history');
+            const loveCountSpan = document.getElementById('love-count');
+            const coinCountSpan = document.getElementById('coin-count');
+            const copyCountSpan = document.getElementById('copy-count');
 
-    <!-- All button -->
-    <div class=" mb-4">
-        <button class="btn btn-outline btn-info text-black w-24 ">All</button>
-    </div>
-    <!-- Call & Copy buttons -->
-    <div class="flex justify-center gap-3">
-        <button id="copy-btn"  class="btn btn-outline flex items-center gap-2 w-[50%]">
-            <img src="asserts/copy.png" alt="Copy" class="w-5 h-5">
-            Copy
-        </button>
-        <button class="btn btn-success flex items-center gap-2 w-[50%]">
-            <img id="call-btn" src="asserts/phone-call.png" alt="Call" class="w-5 h-5">
-            Call
-        </button>
-        
-    </div>
-</div>
-<!--Police Card -->
- <div class="max-w-sm mx-auto bg-white shadow-xl rounded-2xl p-5 mt-5">
-    <div class="flex justify-between items-center mb-4">
-        <img src="asserts/police.png" alt="Police" class="w-6 h-6">
-        <button id="love" class="btn btn-circle btn-sm bg-red-500 hover:bg-red-600 text-white p-2">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-            </svg>
-        </button>
-    </div>
-    <h1 class="text-lg font-bold text-gray-800 mb-1 ">Police Helpline Number</h1>
-    <p class="text-gray-500 mb-4 ">Police </p>
-    <h2 class="text-3xl font-extrabold text-black mb-4">999</h2>
+            let loveCount = 0;
+            let coinCount = 100;
+            let copyCount = 0;
 
-    <!-- All button -->
-    <div class=" mb-4">
-        <button class="btn btn-outline btn-info text-black w-24 ">Police</button>
-    </div>
-    <!-- Call & Copy buttons -->
-    <div class="flex justify-center gap-3">
-        <button id="copy-btn" class="btn btn-outline flex items-center gap-2 w-[50%]">
-            <img src="asserts/copy.png" alt="Copy" class="w-5 h-5">
-            Copy
-        </button>
-        <button id="call-btn" class="btn btn-success flex items-center gap-2 w-[50%]">
-            <img src="asserts/phone-call.png" alt="Call" class="w-5 h-5">
-            Call
-        </button>
-        
-    </div>
-</div>
-<!--Fire Service  Card -->
-<div class="max-w-sm mx-auto bg-white shadow-xl rounded-2xl p-5 mt-5">
-    <div class="flex justify-between items-center mb-4">
-        <img src="asserts/fire-service.png" alt="Fire Service" class="w-6 h-6">
-        <button id="love" class="btn btn-circle btn-sm bg-red-500 hover:bg-red-600 text-white p-2">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-            </svg>
-        </button>
-    </div>
-    <h1 class="text-lg font-bold text-gray-800 mb-1 ">Fire Service Number</h1>
-    <p class="text-gray-500 mb-4 ">Fire Service </p>
-    <h2 class="text-3xl font-extrabold text-black mb-4">999</h2>
+            // Function to handle the "Copy" button click
+            const handleCopy = (event) => {
+                const card = event.currentTarget.closest('.card-item');
+                const phoneNumber = card.querySelector('h2').textContent.trim();
 
-    <!-- All button -->
-    <div class=" mb-4">
-        <button class="btn btn-outline btn-info text-black w-24 ">Fire</button>
-    </div>
-    <!-- Call & Copy buttons -->
-    <div class="flex justify-center gap-3">
-        <button id="copy-btn" class="btn btn-outline flex items-center gap-2 w-[50%]">
-            <img src="asserts/copy.png" alt="Copy" class="w-5 h-5">
-            Copy
-        </button>
-        <button id="call-btn" class="btn btn-success flex items-center gap-2 w-[50%]">
-            <img src="asserts/phone-call.png" alt="Call" class="w-5 h-5">
-            Call
-        </button>
-        
-    </div>
-</div>
-<!--Ambulance Service Card -->
-<div class="max-w-sm mx-auto bg-white shadow-xl rounded-2xl p-5 mt-5">
-    <div class="flex justify-between items-center mb-4">
-        <img src="asserts/ambulance.png" alt="Ambulance" class="w-6 h-6">
-        <button id="love" class="btn btn-circle btn-sm bg-red-500 hover:bg-red-600 text-white p-2">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-            </svg>
-        </button>
-    </div>
-    <h1 class="text-lg font-bold text-gray-800 mb-1 ">Ambulance Service</h1>
-    <p class="text-gray-500 mb-4 ">Ambulance </p>
-    <h2 class="text-3xl font-extrabold text-black mb-4">1994-999999</h2>
+                navigator.clipboard.writeText(phoneNumber)
+                    .then(() => {
+                        alert(`Copied number: ${phoneNumber}`);
+                        copyCount++;
+                        copyCountSpan.textContent = copyCount;
+                    })
+                    .catch(err => {
+                        console.error('Failed to copy text: ', err);
+                    });
+            };
 
-    <!-- All button -->
-    <div class=" mb-4">
-        <button class="btn btn-outline btn-info text-black w-24 ">Health</button>
-    </div>
-    <!-- Call & Copy buttons -->
-    <div class="flex justify-center gap-3">
-        <button id="copy-btn" class="btn btn-outline flex items-center gap-2 w-[50%]">
-            <img src="asserts/copy.png" alt="Copy" class="w-5 h-5">
-            Copy
-        </button>
-        <button id="call-btn" class="btn btn-success flex items-center gap-2 w-[50%]">
-            <img src="asserts/phone-call.png" alt="Call" class="w-5 h-5">
-            Call
-        </button>
-        
-    </div>
-</div>
-<!--Women & Child Helpline Card -->
-<div class="max-w-sm mx-auto bg-white shadow-xl rounded-2xl p-5 mt-5">
-    <div class="flex justify-between items-center mb-4">
-        <img src="asserts/helping-hand.png" alt="Helpline" class="w-6 h-6">
-        <button id="love" class="btn btn-circle btn-sm bg-red-500 hover:bg-red-600 text-white p-2">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-            </svg>
-        </button>
-    </div>
-    <h1 class="text-lg font-bold text-gray-800 mb-1 ">Women & Child Helpline</h1>
-    <p class="text-gray-500 mb-4 ">Women & Child Helpline </p>
-    <h2 class="text-3xl font-extrabold text-black mb-4">109</h2>
+            // Function to handle the "Call" button click
+            const handleCall = (event) => {
+                const card = event.currentTarget.closest('.card-item');
+                const phoneNumber = card.querySelector('h2').textContent.trim();
+                const helplineName = card.querySelector('h1').textContent.trim();
 
-    <!-- All button -->
-    <div class=" mb-4">
-        <button class="btn btn-outline btn-info text-black w-24 ">Help</button>
-    </div>
-    <!-- Call & Copy buttons -->
-    <div class="flex justify-center gap-3">
-        <button id="copy-btn" class="btn btn-outline flex items-center gap-2 w-[50%]">
-            <img src="asserts/copy.png" alt="Copy" class="w-5 h-5">
-            Copy
-        </button>
-        <button id="call-btn" class="btn btn-success flex items-center gap-2 w-[50%]">
-            <img src="asserts/phone-call.png" alt="Call" class="w-5 h-5">
-            Call
-        </button>
-        
-    </div>
-</div>
-<!--Anti-Corruption Helpline Card -->
-<div class="max-w-sm mx-auto bg-white shadow-xl rounded-2xl p-5 mt-5">
-    <div class="flex justify-between items-center mb-4">
-        <img src="asserts/stop-corruption.png" alt="Stop-Corruption" class="w-6 h-6">
-        <button id="love" class="btn btn-circle btn-sm bg-red-500 hover:bg-red-600 text-white p-2">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-            </svg>
-        </button>
-    </div>
-    <h1 class="text-lg font-bold text-gray-800 mb-1 ">Anti-Corruption Helpline</h1>
-    <p class="text-gray-500 mb-4 ">Anti-Corruption </p>
-    <h2 class="text-3xl font-extrabold text-black mb-4">106</h2>
+                if (coinCount >= 20) {
+                    window.location.href = `tel:${phoneNumber.replace(/-/g, '')}`;
+                    coinCount -= 20;
+                    coinCountSpan.textContent = coinCount;
 
-    <!-- All button -->
-    <div class=" mb-4">
-        <button class="btn btn-outline btn-info text-black w-24 ">Govt.</button>
-    </div>
-    <!-- Call & Copy buttons -->
-    <div class="flex justify-center gap-3">
-        <button id="copy-btn" class="btn btn-outline flex items-center gap-2 w-[50%]">
-            <img src="asserts/copy.png" alt="Copy" class="w-5 h-5">
-            Copy
-        </button>
-        <button id="call-btn" class="btn btn-success flex items-center gap-2 w-[50%]">
-            <img src="asserts/phone-call.png" alt="Call" class="w-5 h-5">
-            Call
-        </button>
-        
-    </div>
-</div>
-<!--Electricity Helpline Card -->
-<div class="max-w-sm mx-auto bg-white shadow-xl rounded-2xl p-5 mt-5">
-    <div class="flex justify-between items-center mb-4">
-        <img src="asserts/electric-tower.png" alt="Electricity Helpline" class="w-6 h-6">
-        <button id="love" class="btn btn-circle btn-sm bg-red-500 hover:bg-red-600 text-white p-2">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-            </svg>
-        </button>
-    </div>
-    <h1 class="text-lg font-bold text-gray-800 mb-1 ">Electricity Helpline</h1>
-    <p class="text-gray-500 mb-4 ">Electricity Helpline</p>
-    <h2 class="text-3xl font-extrabold text-black mb-4">16216</h2>
+                    // Add to call history
+                    addCallToHistory(helplineName, phoneNumber);
+                } else {
+                    alert('Not enough coins to make a call.');
+                }
+            };
 
-    <!-- All button -->
-    <div class=" mb-4">
-        <button class="btn btn-outline btn-info text-black w-24 ">Electricity</button>
-    </div>
-    <!-- Call & Copy buttons -->
-    <div class="flex justify-center gap-3">
-        <button id="copy-btn" class="btn btn-outline flex items-center gap-2 w-[50%]">
-            <img src="asserts/copy.png" alt="Copy" class="w-5 h-5">
-            Copy
-        </button>
-        <button id="call-btn" class="btn btn-success flex items-center gap-2 w-[50%]">
-            <img src="asserts/phone-call.png" alt="Call" class="w-5 h-5">
-            Call
-        </button>
-        
-    </div>
-</div>
-<!--Brac Helpline Card -->
-<div class="max-w-sm mx-auto bg-white shadow-xl rounded-2xl p-5 mt-5">
-    <div class="flex justify-between items-center mb-4">
-        <img src="asserts/brac.png" alt="Brac Helpline" class="w-6 h-6">
-        <button id="love" class="btn btn-circle btn-sm bg-red-500 hover:bg-red-600 text-white p-2">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-            </svg>
-        </button>
-    </div>
-    <h1 class="text-lg font-bold text-gray-800 mb-1 ">Brac Helpline</h1>
-    <p class="text-gray-500 mb-4 ">Brac Helpline</p>
-    <h2 class="text-3xl font-extrabold text-black mb-4">16445</h2>
+            // Function to handle the "Love" button click
+            const handleLove = () => {
+                loveCount++;
+                loveCountSpan.textContent = loveCount;
+            };
 
-    <!-- All button -->
-    <div class=" mb-4">
-        <button class="btn btn-outline btn-info text-black w-24 ">NGO</button>
-    </div>
-    <!-- Call & Copy buttons -->
-    <div class="flex justify-center gap-3">
-        <button id="copy-btn" class="btn btn-outline flex items-center gap-2 w-[50%]">
-            <img src="asserts/copy.png" alt="Copy" class="w-5 h-5">
-            Copy
-        </button>
-        <button id="call-btn" class="btn btn-success flex items-center gap-2 w-[50%]">
-            <img src="asserts/phone-call.png" alt="Call" class="w-5 h-5">
-            Call
-        </button>
-        
-    </div>
-</div>
-<!--Electricity Helpline Card -->
-<div class="max-w-sm mx-auto bg-white shadow-xl rounded-2xl p-5 mt-5">
-    <div class="flex justify-between items-center mb-4">
-        <img src="asserts/Bangladesh-Railway.png" alt="Bangladesh-Railway" class="w-6 h-6">
-        <button id="love" class="btn btn-circle btn-sm bg-red-500 hover:bg-red-600 text-white p-2">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-            </svg>
-        </button>
-    </div>
-    <h1 class="text-lg font-bold text-gray-800 mb-1 ">Bangladesh Railway Helpline </h1>
-    <p class="text-gray-500 mb-4 ">Bangladesh Railway</p>
-    <h2 class="text-3xl font-extrabold text-black mb-4">16445</h2>
+            // Function to add a call to the history list
+            const addCallToHistory = (name, number) => {
+                if (!callHistoryList) return;
 
-    <!-- All button -->
-    <div class=" mb-4">
-        <button class="btn btn-outline btn-info text-black w-24 ">Travel</button>
-    </div>
-    <!-- Call & Copy buttons -->
-    <div class="flex justify-center gap-3">
-        <button id="copy-btn" class="btn btn-outline flex items-center gap-2 w-[50%]">
-            <img src="asserts/copy.png" alt="Copy" class="w-5 h-5">
-            Copy
-        </button>
-        <button id="call-btn" class="btn btn-success flex items-center gap-2 w-[50%]">
-            <img src="asserts/phone-call.png" alt="Call" class="w-5 h-5">
-            Call
-        </button>
-        
-    </div>
-</div>
-</div>
-    <!--Right Card Section -->
-<div>
+                const now = new Date();
+                const formattedTime = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
+                const formattedDate = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 
-</div>
-</div>
+                const historyItem = document.createElement('li');
+                historyItem.className = 'p-3 rounded-lg bg-white shadow-sm flex justify-between items-center text-sm';
+                historyItem.innerHTML = `
+                    <div>
+                        <span class="font-semibold text-gray-800">${name}</span><br>
+                        <span class="text-gray-600">${number}</span>
+                    </div>
+                    <div class="text-right text-gray-400 text-xs">
+                        ${formattedDate}<br>
+                        ${formattedTime}
+                    </div>
+                `;
+                callHistoryList.prepend(historyItem);
+            };
+
+            // Function to clear the call history
+            const clearHistory = () => {
+                if (callHistoryList) {
+                    callHistoryList.innerHTML = '';
+                    alert('Call history cleared!');
+                }
+            };
+
+            // Attach event listeners
+            copyButtons.forEach(button => button.addEventListener('click', handleCopy));
+            callButtons.forEach(button => button.addEventListener('click', handleCall));
+            loveButtons.forEach(button => button.addEventListener('click', handleLove));
+
+            if (clearButton) {
+                clearButton.addEventListener('click', clearHistory);
+            }
+
+        });
+    </script>
 </body>
 </html>
