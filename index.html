@@ -28,7 +28,7 @@
         <!-- Coin button -->
         <button class="btn btn-dash bg-white">
             <img src="asserts/coin.png" alt="Coin" class="w-[16px] h-[16px]">
-            0
+            100
         </button>
 
         <!-- Copy button -->
@@ -49,12 +49,14 @@
 
 
 <!--Card Section -->
-<div class="grid grid-cols-3">
-    <!-- Alarm Card -->
+<div class="">
+    <!--Left Card Section -->
+<div>
+        <!-- Alarm Card -->
  <div class="max-w-sm mx-auto bg-white shadow-xl rounded-2xl p-5 mt-5">
     <div class="flex justify-between items-center mb-4">
         <img src="asserts/alarm.png" alt="Alarm" class="w-6 h-6">
-        <button class="btn btn-circle btn-sm bg-red-500 hover:bg-red-600 text-white p-2">
+        <button id="love" class="btn btn-circle btn-sm bg-red-500 hover:bg-red-600 text-white p-2">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
             </svg>
@@ -70,12 +72,12 @@
     </div>
     <!-- Call & Copy buttons -->
     <div class="flex justify-center gap-3">
-        <button class="btn btn-outline flex items-center gap-2 w-[50%]">
+        <button id="copy-btn"  class="btn btn-outline flex items-center gap-2 w-[50%]">
             <img src="asserts/copy.png" alt="Copy" class="w-5 h-5">
             Copy
         </button>
         <button class="btn btn-success flex items-center gap-2 w-[50%]">
-            <img src="asserts/phone-call.png" alt="Call" class="w-5 h-5">
+            <img id="call-btn" src="asserts/phone-call.png" alt="Call" class="w-5 h-5">
             Call
         </button>
         
@@ -84,8 +86,8 @@
 <!--Police Card -->
  <div class="max-w-sm mx-auto bg-white shadow-xl rounded-2xl p-5 mt-5">
     <div class="flex justify-between items-center mb-4">
-        <img src="asserts/police.png" alt="Alarm" class="w-6 h-6">
-        <button class="btn btn-circle btn-sm bg-red-500 hover:bg-red-600 text-white p-2">
+        <img src="asserts/police.png" alt="Police" class="w-6 h-6">
+        <button id="love" class="btn btn-circle btn-sm bg-red-500 hover:bg-red-600 text-white p-2">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
             </svg>
@@ -101,11 +103,11 @@
     </div>
     <!-- Call & Copy buttons -->
     <div class="flex justify-center gap-3">
-        <button class="btn btn-outline flex items-center gap-2 w-[50%]">
+        <button id="copy-btn" class="btn btn-outline flex items-center gap-2 w-[50%]">
             <img src="asserts/copy.png" alt="Copy" class="w-5 h-5">
             Copy
         </button>
-        <button class="btn btn-success flex items-center gap-2 w-[50%]">
+        <button id="call-btn" class="btn btn-success flex items-center gap-2 w-[50%]">
             <img src="asserts/phone-call.png" alt="Call" class="w-5 h-5">
             Call
         </button>
@@ -115,8 +117,8 @@
 <!--Fire Service  Card -->
 <div class="max-w-sm mx-auto bg-white shadow-xl rounded-2xl p-5 mt-5">
     <div class="flex justify-between items-center mb-4">
-        <img src="asserts/police.png" alt="Alarm" class="w-6 h-6">
-        <button class="btn btn-circle btn-sm bg-red-500 hover:bg-red-600 text-white p-2">
+        <img src="asserts/fire-service.png" alt="Fire Service" class="w-6 h-6">
+        <button id="love" class="btn btn-circle btn-sm bg-red-500 hover:bg-red-600 text-white p-2">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
             </svg>
@@ -132,16 +134,207 @@
     </div>
     <!-- Call & Copy buttons -->
     <div class="flex justify-center gap-3">
-        <button class="btn btn-outline flex items-center gap-2 w-[50%]">
+        <button id="copy-btn" class="btn btn-outline flex items-center gap-2 w-[50%]">
             <img src="asserts/copy.png" alt="Copy" class="w-5 h-5">
             Copy
         </button>
-        <button class="btn btn-success flex items-center gap-2 w-[50%]">
+        <button id="call-btn" class="btn btn-success flex items-center gap-2 w-[50%]">
             <img src="asserts/phone-call.png" alt="Call" class="w-5 h-5">
             Call
         </button>
         
     </div>
+</div>
+<!--Ambulance Service Card -->
+<div class="max-w-sm mx-auto bg-white shadow-xl rounded-2xl p-5 mt-5">
+    <div class="flex justify-between items-center mb-4">
+        <img src="asserts/ambulance.png" alt="Ambulance" class="w-6 h-6">
+        <button id="love" class="btn btn-circle btn-sm bg-red-500 hover:bg-red-600 text-white p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+            </svg>
+        </button>
+    </div>
+    <h1 class="text-lg font-bold text-gray-800 mb-1 ">Ambulance Service</h1>
+    <p class="text-gray-500 mb-4 ">Ambulance </p>
+    <h2 class="text-3xl font-extrabold text-black mb-4">1994-999999</h2>
+
+    <!-- All button -->
+    <div class=" mb-4">
+        <button class="btn btn-outline btn-info text-black w-24 ">Health</button>
+    </div>
+    <!-- Call & Copy buttons -->
+    <div class="flex justify-center gap-3">
+        <button id="copy-btn" class="btn btn-outline flex items-center gap-2 w-[50%]">
+            <img src="asserts/copy.png" alt="Copy" class="w-5 h-5">
+            Copy
+        </button>
+        <button id="call-btn" class="btn btn-success flex items-center gap-2 w-[50%]">
+            <img src="asserts/phone-call.png" alt="Call" class="w-5 h-5">
+            Call
+        </button>
+        
+    </div>
+</div>
+<!--Women & Child Helpline Card -->
+<div class="max-w-sm mx-auto bg-white shadow-xl rounded-2xl p-5 mt-5">
+    <div class="flex justify-between items-center mb-4">
+        <img src="asserts/helping-hand.png" alt="Helpline" class="w-6 h-6">
+        <button id="love" class="btn btn-circle btn-sm bg-red-500 hover:bg-red-600 text-white p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+            </svg>
+        </button>
+    </div>
+    <h1 class="text-lg font-bold text-gray-800 mb-1 ">Women & Child Helpline</h1>
+    <p class="text-gray-500 mb-4 ">Women & Child Helpline </p>
+    <h2 class="text-3xl font-extrabold text-black mb-4">109</h2>
+
+    <!-- All button -->
+    <div class=" mb-4">
+        <button class="btn btn-outline btn-info text-black w-24 ">Help</button>
+    </div>
+    <!-- Call & Copy buttons -->
+    <div class="flex justify-center gap-3">
+        <button id="copy-btn" class="btn btn-outline flex items-center gap-2 w-[50%]">
+            <img src="asserts/copy.png" alt="Copy" class="w-5 h-5">
+            Copy
+        </button>
+        <button id="call-btn" class="btn btn-success flex items-center gap-2 w-[50%]">
+            <img src="asserts/phone-call.png" alt="Call" class="w-5 h-5">
+            Call
+        </button>
+        
+    </div>
+</div>
+<!--Anti-Corruption Helpline Card -->
+<div class="max-w-sm mx-auto bg-white shadow-xl rounded-2xl p-5 mt-5">
+    <div class="flex justify-between items-center mb-4">
+        <img src="asserts/stop-corruption.png" alt="Stop-Corruption" class="w-6 h-6">
+        <button id="love" class="btn btn-circle btn-sm bg-red-500 hover:bg-red-600 text-white p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+            </svg>
+        </button>
+    </div>
+    <h1 class="text-lg font-bold text-gray-800 mb-1 ">Anti-Corruption Helpline</h1>
+    <p class="text-gray-500 mb-4 ">Anti-Corruption </p>
+    <h2 class="text-3xl font-extrabold text-black mb-4">106</h2>
+
+    <!-- All button -->
+    <div class=" mb-4">
+        <button class="btn btn-outline btn-info text-black w-24 ">Govt.</button>
+    </div>
+    <!-- Call & Copy buttons -->
+    <div class="flex justify-center gap-3">
+        <button id="copy-btn" class="btn btn-outline flex items-center gap-2 w-[50%]">
+            <img src="asserts/copy.png" alt="Copy" class="w-5 h-5">
+            Copy
+        </button>
+        <button id="call-btn" class="btn btn-success flex items-center gap-2 w-[50%]">
+            <img src="asserts/phone-call.png" alt="Call" class="w-5 h-5">
+            Call
+        </button>
+        
+    </div>
+</div>
+<!--Electricity Helpline Card -->
+<div class="max-w-sm mx-auto bg-white shadow-xl rounded-2xl p-5 mt-5">
+    <div class="flex justify-between items-center mb-4">
+        <img src="asserts/electric-tower.png" alt="Electricity Helpline" class="w-6 h-6">
+        <button id="love" class="btn btn-circle btn-sm bg-red-500 hover:bg-red-600 text-white p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+            </svg>
+        </button>
+    </div>
+    <h1 class="text-lg font-bold text-gray-800 mb-1 ">Electricity Helpline</h1>
+    <p class="text-gray-500 mb-4 ">Electricity Helpline</p>
+    <h2 class="text-3xl font-extrabold text-black mb-4">16216</h2>
+
+    <!-- All button -->
+    <div class=" mb-4">
+        <button class="btn btn-outline btn-info text-black w-24 ">Electricity</button>
+    </div>
+    <!-- Call & Copy buttons -->
+    <div class="flex justify-center gap-3">
+        <button id="copy-btn" class="btn btn-outline flex items-center gap-2 w-[50%]">
+            <img src="asserts/copy.png" alt="Copy" class="w-5 h-5">
+            Copy
+        </button>
+        <button id="call-btn" class="btn btn-success flex items-center gap-2 w-[50%]">
+            <img src="asserts/phone-call.png" alt="Call" class="w-5 h-5">
+            Call
+        </button>
+        
+    </div>
+</div>
+<!--Brac Helpline Card -->
+<div class="max-w-sm mx-auto bg-white shadow-xl rounded-2xl p-5 mt-5">
+    <div class="flex justify-between items-center mb-4">
+        <img src="asserts/brac.png" alt="Brac Helpline" class="w-6 h-6">
+        <button id="love" class="btn btn-circle btn-sm bg-red-500 hover:bg-red-600 text-white p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+            </svg>
+        </button>
+    </div>
+    <h1 class="text-lg font-bold text-gray-800 mb-1 ">Brac Helpline</h1>
+    <p class="text-gray-500 mb-4 ">Brac Helpline</p>
+    <h2 class="text-3xl font-extrabold text-black mb-4">16445</h2>
+
+    <!-- All button -->
+    <div class=" mb-4">
+        <button class="btn btn-outline btn-info text-black w-24 ">NGO</button>
+    </div>
+    <!-- Call & Copy buttons -->
+    <div class="flex justify-center gap-3">
+        <button id="copy-btn" class="btn btn-outline flex items-center gap-2 w-[50%]">
+            <img src="asserts/copy.png" alt="Copy" class="w-5 h-5">
+            Copy
+        </button>
+        <button id="call-btn" class="btn btn-success flex items-center gap-2 w-[50%]">
+            <img src="asserts/phone-call.png" alt="Call" class="w-5 h-5">
+            Call
+        </button>
+        
+    </div>
+</div>
+<!--Electricity Helpline Card -->
+<div class="max-w-sm mx-auto bg-white shadow-xl rounded-2xl p-5 mt-5">
+    <div class="flex justify-between items-center mb-4">
+        <img src="asserts/Bangladesh-Railway.png" alt="Bangladesh-Railway" class="w-6 h-6">
+        <button id="love" class="btn btn-circle btn-sm bg-red-500 hover:bg-red-600 text-white p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+            </svg>
+        </button>
+    </div>
+    <h1 class="text-lg font-bold text-gray-800 mb-1 ">Bangladesh Railway Helpline </h1>
+    <p class="text-gray-500 mb-4 ">Bangladesh Railway</p>
+    <h2 class="text-3xl font-extrabold text-black mb-4">16445</h2>
+
+    <!-- All button -->
+    <div class=" mb-4">
+        <button class="btn btn-outline btn-info text-black w-24 ">Travel</button>
+    </div>
+    <!-- Call & Copy buttons -->
+    <div class="flex justify-center gap-3">
+        <button id="copy-btn" class="btn btn-outline flex items-center gap-2 w-[50%]">
+            <img src="asserts/copy.png" alt="Copy" class="w-5 h-5">
+            Copy
+        </button>
+        <button id="call-btn" class="btn btn-success flex items-center gap-2 w-[50%]">
+            <img src="asserts/phone-call.png" alt="Call" class="w-5 h-5">
+            Call
+        </button>
+        
+    </div>
+</div>
+</div>
+    <!--Right Card Section -->
+<div>
+
 </div>
 </div>
 </body>
